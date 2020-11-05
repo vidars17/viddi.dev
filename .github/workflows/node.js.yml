@@ -18,7 +18,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: 22
           script: |
-            cd ~/home/vidar/viddi.dev # navigate into the folder
+            cd ~/home/vidar/viddi.dev/
             git pull
-            npm install # install dependencies
-            pm2 restart app.js
+            npm install
+            pm2 restart app
