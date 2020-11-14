@@ -1,5 +1,20 @@
 {
+  "name": "viddi.dev",
+  
   "dependencies": {
+    "ejs": "^3.1.5",
     "express": "^4.17.1"
-  }
+  },
+  "devDependencies": {
+    "bulma": "^0.9.1",
+    "node-sass": "^5.0.0"
+  },
+  "scripts": {
+    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss css/mystyles.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
+  },
+
+
+  "license": "ISC"
 }
