@@ -1,20 +1,21 @@
 {
   "name": "viddi.dev",
-  
   "dependencies": {
+    "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "bulma": "^0.9.1",
-    "node-sass": "^5.0.0"
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.6"
   },
   "scripts": {
-    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss css/mystyles.css",
+    "start-app": "nodemon app.js",
+    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss public/css/mystyles.css",
     "css-watch": "npm run css-build -- --watch",
     "start": "npm run css-watch"
   },
-
-
   "license": "ISC"
 }
