@@ -4,28 +4,52 @@
 $turq: #2de2e6;
 $blue: #035ee8;
 $pink: #f6019d;
-$red: #d40078;
 $purple: #9700cc;
 
+
+$teal: #2f9195;
+$yellow: #f7d969;
+$orange: #f16a43;
+$red: #ec1c4b;
+$purple: #a6206a;
+
 $danger: $red;
-$white: $pink;
-$info: $blue;
+$white:  rgba(241,106,67,1) ;
+$info:  rgba(241,106,67,1) ;
 $link: $turq;
 $primary: $purple;
 $text: $pink;
 $background: $purple;
 
+
 html,body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  
+  .hero.is-info {
+    .title {
+      position: absolute;
+    }
+
+    background: rgb(47,145,149);
+    background: linear-gradient(0deg, rgba(47,145,149,1) 0%, rgba(247,217,105,1) 15%, rgba(241,106,67,1) 45%, rgba(236,28,75,1) 70%, rgba(166,32,106,1) 90%);
   }
-.hero.is-info {
-    background-color: #9700cc;
-
-#triangle1 {
-
+  #triangle1 {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid $red;
+    position: absolute;
+  }
+  #triangle2 {
+    width: 0;
+    height: 0;
+    border-left: 48px solid transparent;
+    border-right: 48px solid transparent;
+    border-top: 100px solid $orange;
+    overflow: hidden;
+    position: absolute;
+    }
 }
-#triangle2 {
 
-}
-}
 @import "../node_modules/bulma/bulma.sass";
