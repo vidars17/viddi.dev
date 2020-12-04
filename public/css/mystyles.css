@@ -2,24 +2,55 @@ html, body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
   html .hero.is-info, body .hero.is-info {
     background: #2f9195;
-    background: linear-gradient(0deg, #2f9195 0%, #f7d969 15%, #f16a43 45%, #ec1c4b 70%, #a6206a 90%); }
-    html .hero.is-info .title, body .hero.is-info .title {
-      position: absolute; }
-  html #triangle1, body #triangle1 {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 100px solid #ec1c4b;
-    position: absolute; }
-  html #triangle2, body #triangle2 {
-    width: 0;
-    height: 0;
-    border-left: 48px solid transparent;
-    border-right: 48px solid transparent;
-    border-top: 100px solid #f16a43;
-    overflow: hidden;
-    position: absolute; }
+    background: url(/images/palm-tree-left.png) 0% 100% no-repeat, url(/images/palm-tree-right.png) 100% 100% no-repeat, linear-gradient(0deg, #2f9195 0%, #f7d969 15%, #f16a43 45%, #ec1c4b 70%, #a6206a 90%);
+    background-size: 200px 200px, 200px 200px, 200% 200%;
+    animation: gradient 30s ease infinite; }
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 200%, 100% 200% ,0% 0%; }
+  50% {
+    background-position: 0% 100%, 100% 100%, 100% 100%; }
+  100% {
+    background-position: 0% 200%, 100% 200%, 0% 0%; } }
+  html .navbar,
+  html .navbar-menu,
+  html .navbar-start,
+  html .navbar-end, body .navbar,
+  body .navbar-menu,
+  body .navbar-start,
+  body .navbar-end {
+    align-items: stretch;
+    display: flex;
+    padding: 0; }
+  html .navbar-menu, body .navbar-menu {
+    flex-grow: 1;
+    flex-shrink: 0;
+    background-color: transparent; }
+  html .navbar-start, body .navbar-start {
+    justify-content: flex-start;
+    margin-right: auto; }
+  html .navbar-end, body .navbar-end {
+    justify-content: flex-end;
+    margin-left: auto; }
+  html .navbar .container, body .navbar .container {
+    display: flex; }
+  html .navbar-item, body .navbar-item {
+    display: flex;
+    align-items: center; }
+  @media screen and (max-width: 1023px) {
+    html .hero.is-info .navbar-menu, body .hero.is-info .navbar-menu {
+      background-color: transparent;
+      box-shadow: none; } }
+
+.button {
+  transition: 0.5s;
+  background-size: 200% auto;
+  background-image: linear-gradient(to right, #f16a43 0%, #ec1c4b 50%, #a6206a 100%); }
+
+.button:hover {
+  background-position: right center;
+  /* change the direction of the change here */ }
 
 /*! bulma.io v0.9.1 | MIT License | github.com/jgthms/bulma */
 /* Bulma Utilities */
@@ -413,14 +444,14 @@ a.box:active {
 .button {
   background-color: #f16a43;
   border-color: #dbdbdb;
-  border-width: 1px;
+  border-width: 0px;
   color: #363636;
   cursor: pointer;
   justify-content: center;
-  padding-bottom: calc(0.5em - 1px);
+  padding-bottom: calc(0.5em - 0px);
   padding-left: 1em;
   padding-right: 1em;
-  padding-top: calc(0.5em - 1px);
+  padding-top: calc(0.5em - 0px);
   text-align: center;
   white-space: nowrap; }
   .button strong {
@@ -429,14 +460,14 @@ a.box:active {
     height: 1.5em;
     width: 1.5em; }
   .button .icon:first-child:not(:last-child) {
-    margin-left: calc(-0.5em - 1px);
+    margin-left: calc(-0.5em - 0px);
     margin-right: 0.25em; }
   .button .icon:last-child:not(:first-child) {
     margin-left: 0.25em;
-    margin-right: calc(-0.5em - 1px); }
+    margin-right: calc(-0.5em - 0px); }
   .button .icon:first-child:last-child {
-    margin-left: calc(-0.5em - 1px);
-    margin-right: calc(-0.5em - 1px); }
+    margin-left: calc(-0.5em - 0px);
+    margin-right: calc(-0.5em - 0px); }
   .button:hover, .button.is-hovered {
     border-color: #b5b5b5;
     color: #363636; }

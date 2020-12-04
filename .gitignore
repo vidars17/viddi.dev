@@ -116,4 +116,7 @@ dist
 # Merge Conflict bastard
 package-lock.json
 
+#Ignore VScode settings
+.vscode
+
 # End of https://www.toptal.com/developers/gitignore/api/node

@@ -21,35 +21,86 @@ $primary: $purple;
 $text: $pink;
 $background: $purple;
 
+$button-border-width: 0px;
 
 html,body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   
+  //Background gradient and animation start -----
   .hero.is-info {
-    .title {
-      position: absolute;
-    }
+
 
     background: rgb(47,145,149);
-    background: linear-gradient(0deg, rgba(47,145,149,1) 0%, rgba(247,217,105,1) 15%, rgba(241,106,67,1) 45%, rgba(236,28,75,1) 70%, rgba(166,32,106,1) 90%);
+    background: url(/images/palm-tree-left.png) 0% 100% no-repeat, url(/images/palm-tree-right.png) 100% 100% no-repeat, linear-gradient(0deg, $teal 0%, $yellow 15%, $orange 45%, $red 70%, $purple 90%);
+    background-size: 200px 200px, 200px 200px, 200% 200%;
+    animation: gradient 30s ease infinite;
   }
-  #triangle1 {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 100px solid $red;
-    position: absolute;
-  }
-  #triangle2 {
-    width: 0;
-    height: 0;
-    border-left: 48px solid transparent;
-    border-right: 48px solid transparent;
-    border-top: 100px solid $orange;
-    overflow: hidden;
-    position: absolute;
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 200%, 100% 200% ,0% 0%;
     }
+    50% {
+      background-position: 0% 100%, 100% 100%, 100% 100%;
+    }
+    100% {
+      background-position: 0% 200%, 100% 200%, 0% 0%;
+    }
+  }
+  //Background gradient and animation ends -----
+
+
+
+  //Navbar section starts ---------
+  .navbar,
+  .navbar-menu,
+  .navbar-start,
+  .navbar-end {
+    align-items: stretch;
+    display: flex;
+    padding: 0;
+  }
+  
+  .navbar-menu{
+    flex-grow: 1;
+    flex-shrink: 0;
+    background-color: transparent;
+  }
+  .navbar-start{
+    justify-content: flex-start;
+    margin-right: auto;
+  }
+  .navbar-end{
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+  .navbar .container {
+    display: flex;
+  }
+  .navbar-item {
+    display: flex;
+    align-items: center;
+  }
+  @media screen and (max-width: 1023px){
+    .hero.is-info .navbar-menu {
+    background-color: transparent;
+    box-shadow: none;
+    }
+  }
+
+
+  //Navbar section ends --------
+
+}
+
+
+.button {
+  transition: 0.5s;
+  background-size: 200% auto;
+  background-image: linear-gradient(to right, $orange 0%, $red 50%, $purple 100%);
+ }
+ .button:hover {
+  background-position: right center; /* change the direction of the change here */
 }
 
 @import "../node_modules/bulma/bulma.sass";
