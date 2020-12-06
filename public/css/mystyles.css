@@ -2,17 +2,20 @@ html, body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
   html .hero.is-info, body .hero.is-info {
     background: #2f9195;
-    background: url(/images/palm-tree-left.png) 0% 100% no-repeat, url(/images/palm-tree-right.png) 100% 100% no-repeat, linear-gradient(0deg, #2f9195 0%, #f7d969 15%, #f16a43 45%, #ec1c4b 70%, #a6206a 90%);
+    background: url(/images/palm-tree-left.png) 0% 100% no-repeat, url(/images/palm-tree-right.png) 100% 100% no-repeat, linear-gradient(0deg, #f7d969 0%, #f16a43 35%, #ec1c4b 65%, #a6206a 90%);
     background-size: 200px 200px, 200px 200px, 200% 200%;
-    animation: gradient 30s ease infinite; }
+    animation: gradient 20s ease forwards; }
 
 @keyframes gradient {
   0% {
     background-position: 0% 200%, 100% 200% ,0% 0%; }
-  50% {
-    background-position: 0% 100%, 100% 100%, 100% 100%; }
   100% {
-    background-position: 0% 200%, 100% 200%, 0% 0%; } }
+    background-position: 0% 100%, 100% 100%, 100% 100%; }
+  /*
+    100% {
+      background-position: 0% 200%, 100% 200%, 0% 0%;
+    }
+    */ }
   html .navbar,
   html .navbar-menu,
   html .navbar-start,

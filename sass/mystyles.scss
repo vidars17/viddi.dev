@@ -31,21 +31,22 @@ html,body {
 
 
     background: rgb(47,145,149);
-    background: url(/images/palm-tree-left.png) 0% 100% no-repeat, url(/images/palm-tree-right.png) 100% 100% no-repeat, linear-gradient(0deg, $teal 0%, $yellow 15%, $orange 45%, $red 70%, $purple 90%);
+    background: url(/images/palm-tree-left.png) 0% 100% no-repeat, url(/images/palm-tree-right.png) 100% 100% no-repeat, linear-gradient(0deg, $yellow 0%, $orange 35%, $red 65%, $purple 90%);
     background-size: 200px 200px, 200px 200px, 200% 200%;
-    animation: gradient 30s ease infinite;
+    animation: gradient 20s ease forwards;
   }
   
   @keyframes gradient {
     0% {
       background-position: 0% 200%, 100% 200% ,0% 0%;
     }
-    50% {
+    100% {
       background-position: 0% 100%, 100% 100%, 100% 100%;
-    }
+    }/*
     100% {
       background-position: 0% 200%, 100% 200%, 0% 0%;
     }
+    */
   }
   //Background gradient and animation ends -----
 
@@ -93,6 +94,8 @@ html,body {
 
 }
 
+#background-text {
+}
 
 .button {
   transition: 0.5s;

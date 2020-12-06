@@ -4,6 +4,8 @@
     "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
+    "jquery": "^3.5.1",
+    "save-dev": "^0.0.1-security",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {

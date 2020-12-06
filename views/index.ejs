@@ -12,8 +12,8 @@
         <div class="hero-body">
             <div class="container has-text-centered">
                 <div class="column is-6 is-offset-3"></div>
-                    <h1 class="title">
-                        Coming soon...
+                    <h1 id="title-text" class="title">
+                        Welcome to my website
                     </h1>
                 </div>
             </div>
@@ -22,5 +22,12 @@
 
     </section>
 </body>
-
+<script>
+    $('#title-text').animate({'opacity': 0}, 3000, function () {
+        $(this).text('My name is Viðar');
+    }).animate({'opacity': 1}, 3000);
+    $('#title-text').animate({'opacity': 0}, 1000, function () {
+        $(this).text('Please have a look around!');
+    }).animate({'opacity': 1}, 3000);
+</script>
 </html>
