@@ -1,12 +1,18 @@
 {
   "name": "viddi.dev",
   "dependencies": {
+    "archiver": "^5.2.0",
+    "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
+    "formidable": "^1.2.2",
+    "imagemagick": "^0.1.3",
     "jquery": "^3.5.1",
     "save-dev": "^0.0.1-security",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "serve-index": "^1.9.1",
+    "shelljs": "^0.8.4"
   },
   "devDependencies": {
     "bulma": "^0.9.1",

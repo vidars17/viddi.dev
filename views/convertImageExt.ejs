@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<%- include("partials/_head.ejs", { title: "Convert File Extension"}) %>
+
+<body>
+    <section class="hero is-info is-fullheight">
+        <div class="hero-head">
+            <%- include("partials/_nav.ejs") %>
+            </div>
+
+            <div class="hero-body">
+                <div class="container">
+                    <section class="section has-padding-bottom-0 has-padding-top-0">
+
+                          <h1 class="is-size-3"><strong class="has-text-black">Upload files:</strong></h1>
+                          <section class="section has-padding-top-5 has-padding-bottom-5">
+                            <form action="/convert" method="POST">
+                              <div class="container box" id="container-body">
+                                <div class="container has-text-centered">
+                                  <i class="fas fa-cloud-upload-alt is-size-1 has-text-info"></i>
+                                </div>
+                                <h2 id="upload-info" class="has-text-weight-semibold is-size-5 has-text-centered">Drag files here to
+                                  upload or
+                                  use
+                                  the 'Upload Files'
+                                  button</h2>
+                                <progress class="progress progress-bar" value="0" max="100">0%</progress>
+                                <div class="box">
+                                    <label for="jpg">jpg</label>
+                                    <input type="radio" id="jpg" name="filetype" value="jpg" required>
+                                    <label for="jpeg">jpeg</label>
+                                    <input type="radio" id="jpeg" name="filetype" value="jpeg">
+                                    <label for="png">png</label>
+                                    <input type="radio" id="png" name="filetype" value="png">
+                                    <label for="gif">gif</label>
+                                    <input type="radio" id="gif" name="filetype" value="gif">
+                                    <label for="webp">webp</label>
+                                    <input type="radio" id="webp" name="filetype" value="webp">
+                                    <label for="tiff">tiff</label>
+                                    <input type="radio" id="tiff" name="filetype" value="tiff">
+                                    <label for="psd">psd</label>
+                                    <input type="radio" id="psd" name="filetype" value="psd">
+                                    <label for="raw">raw</label>
+                                    <input type="radio" id="raw" name="filetype" value="raw">
+                                    <label for="bmp">bmp</label>
+                                    <input type="radio" id="bmp" name="filetype" value="bmp">
+                                    <label for="heif">heif</label>
+                                    <input type="radio" id="heif" name="filetype" value="heif">
+                                    <label for="indd">indd</label>
+                                    <input type="radio" id="indd" name="filetype" value="indd">
+                                </div>
+                                <button class="button is-info upload-btn has-text-weight-semibold" type="button">Upload
+                                  Files</button>
+
+                                
+                                
+                                <!--<button class="button is-success view-btn" type="button">View Uploads</button>-->
+                                <input id="upload-input" type="file" name="uploads[]" accept="image/jpeg,image/jpg,image/png"
+                                  multiple="multiple" hidden>
+                              </div>
+                            </form>
+                          </section>
+                </div>
+            </div>
+
+    </section>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="js/dragNDrop.js"></script>
+</body>
+
+</html>
