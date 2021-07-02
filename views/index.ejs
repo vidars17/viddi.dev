@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 
-<%- include("partials/_head.ejs", { title: "Welcome"}) %>
+<%- include("partials/_head.ejs", { title: lingua.title}) %>
 
 <body>
     <section class="hero is-info is-fullheight">
         <div class="hero-head">
-            <%- include("partials/_nav.ejs") %>
+            <%- include("partials/_nav.ejs", { lang_link: lingua.title }) %>
         </div>
         
         <div class="hero-body">
             <div class="container has-text-centered">
                 <div class="column is-6 is-offset-3"></div>
                     <h1 id="title-text" class="title">
-                        Welcome to my website
+                        <%= lingua.title_text1 %>
                     </h1>
                 </div>
             </div>
@@ -24,10 +24,10 @@
 </body>
 <script>
     $('#title-text').animate({'opacity': 0}, 3000, function () {
-        $(this).text('My name is Viðar');
+        $(this).text( "<%= lingua.title_text2 %>" );
     }).animate({'opacity': 1}, 3000);
     $('#title-text').animate({'opacity': 0}, 3000, function () {
-        $(this).text('Please have a look around!');
+        $(this).text("<%= lingua.title_text3 %>");
     }).animate({'opacity': 1}, 3000);
 </script>
 </html>

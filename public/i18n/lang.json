@@ -1,0 +1,38 @@
+[
+    {
+        "lang" : "english",
+        "lang_in_lang" : "Language",
+        "title" : "Welcome",
+        "nav_lang" : "../pdf/CV-ENS-2021.pdf",
+        "title_text1" : "Welcome to my website",
+        "title_text2" : "My name is Viðar",
+        "title_text3" : "Please have a look around!"
+    },
+    {
+        "lang" : "icelandic",
+        "lang_in_lang" : "Tungumál",
+        "title" : "Velkomin",
+        "nav_lang" : "../pdf/CV-ISL-2021.pdf",
+        "title_text1" : "Velkomin á síðuna mína",
+        "title_text2" : "Ég heiti Viðar",
+        "title_text3" : "Endilega skoðið ykkur um!"
+    },
+    {
+        "lang" : "french",
+        "lang_in_lang" : "Langue",
+        "title" : "Bienvenu(e)",
+        "nav_lang" : "../pdf/CV-ENS-2021.pdf",
+        "title_text1" : "Bienvenu(e) sur mon site internet",
+        "title_text2" : "Je m’apelle Viðar",
+        "title_text3" : "Veuillez jeter un coup d’œil!"
+    },
+    {
+        "lang" : "turkish",
+        "lang_in_lang" : "Dil",
+        "title" : "Hoşgeldiniz",
+        "nav_lang" : "../pdf/CV-ENS-2021.pdf",
+        "title_text1" : "İnternet siteme hoşgeldiniz",
+        "title_text2" : "İsmim Viðar",
+        "title_text3" : "Lütfen siteme bir göz atın!"
+    }
+]

@@ -4,7 +4,7 @@
             <a class="navbar-item" href="../">
                 <span >viddi.dev</span>
             </a>
-
+            
         </div>
         <div id="navbarMenu" class="navbar-menu">
             <div class="navbar-end">
@@ -18,13 +18,33 @@
                     </a>
                 </span>
                 <span class="navbar-item">
-                    <a class="button" href="../pdf/CV-2021.pdf" download>
+                    <a class="button" href= "<%= lingua.cv_lang %>" download>
                         <span class="icon">
                             <i class="fa fa-book"></i>
                         </span>
                         <span>CV</span>
                     </a>
                 </span>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        <%= lingua.lang_in_lang %>
+                    </a>
+            
+                    <div class="navbar-dropdown">
+                      <a href="?language=en" class="navbar-item">
+                        English
+                      </a>
+                      <a href="?language=is" class="navbar-item">
+                        Íslenska
+                      </a>
+                      <a href="?language=fr" class="navbar-item">
+                        Français
+                      </a>
+                      <a href="?language=tr" class="navbar-item">
+                        Türkçe
+                      </a>
+                    </div>
+                  </div>
             </div>
         </div>
     </div>
