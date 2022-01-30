@@ -12,6 +12,10 @@ const lingua = require('lingua');
 const port = process.env.APP_PORT;
 const host = process.env.APP_HOST;
 
+const bodyParser = require('body-parser');
+
+    
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')))
 app.set("view engine", "ejs");
@@ -23,7 +27,7 @@ app.use(lingua(app, {
 
 
 
-
+require("./JuniAPI/app")(app);
 
 app.get("/", (req, res) => {
 	res.render("index.ejs");

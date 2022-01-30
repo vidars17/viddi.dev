@@ -1,0 +1,3 @@
+[submodule "JuniAPI"]
+	path = JuniAPI
+	url = git@github.com:vidars17/JuniAPI.git
