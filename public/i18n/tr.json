@@ -5,5 +5,6 @@
     "cv_lang" : "../pdf/CV-ENS-2021.pdf",
     "title_text1" : "İnternet siteme hoşgeldiniz",
     "title_text2" : "İsmim Viðar",
-    "title_text3" : "Lütfen siteme bir göz atın!"
+    "title_text3" : "Lütfen siteme bir göz atın!",
+    "error" : "Aradığınız sayfa maalesef bulunamadı."
 }

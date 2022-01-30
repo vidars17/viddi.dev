@@ -39,6 +39,10 @@ app.get("/about", (req, res) => {
 app.get("/cv", (req, res) => {
 	res.render("cv.ejs");
 })
+app.use(function (req, res) {
+	res.status(404).render("error", { error: "Sorry but that page doesn't exist.", statusCode: "404" });
+  });
+
 app.listen(port, () => {
 	console.log(`App listening at ${host}${port}`);
 })

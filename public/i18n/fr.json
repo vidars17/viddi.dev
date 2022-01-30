@@ -5,5 +5,6 @@
     "cv_lang" : "../pdf/CV-ENS-2021.pdf",
     "title_text1" : "Bienvenu(e) sur mon site internet",
     "title_text2" : "Je m’appelle Viðar",
-    "title_text3" : "Veuillez jeter un coup d’œil!"
+    "title_text3" : "Veuillez jeter un coup d’œil!",
+    "error" : "Désolé, la page que vous avez demandée n'existe pas."
 }
