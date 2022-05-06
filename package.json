@@ -6,6 +6,7 @@
     "express": "^4.17.1",
     "jquery": "^3.5.1",
     "lingua": "^0.4.0",
+    "mongoose": "^6.3.2",
     "save-dev": "^0.0.1-security",
     "serve-favicon": "^2.5.0"
   },
