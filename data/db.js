@@ -4,7 +4,7 @@ const urlSchema = require("./Schemas/url")
 
 const connectionString = `${process.env.MONGODB_CONNECTION_STRING}`;
 
-const connection = mongoose.createConnection(connectionString, { useNewUrlParser: true , useUnifiedTopology: true, useFindAndModify: false });
+const connection = mongoose.createConnection(connectionString, { useNewUrlParser: true , useUnifiedTopology: true });
 
 module.exports = {
     Urls : connection.model("Url", urlSchema)
