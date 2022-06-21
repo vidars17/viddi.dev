@@ -14,8 +14,7 @@ $red: #ec1c4b;
 $purple: #a6206a;
 
 $danger: $red;
-$white:  rgba(241,106,67,1) ;
-$info:  rgba(241,106,67,1) ;
+
 $link: $turq;
 $primary: $purple;
 $text: $pink;
@@ -27,14 +26,24 @@ html,body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   
   //Background gradient and animation start -----
-  .hero.is-info {
-
-
+  .hero.is-info.main {
     background: rgb(47,145,149);
+    $white:  rgba(241,106,67,1) ;
+    $info:  rgba(241,106,67,1) ;
     background: url(/images/palm-tree-left.png) 0% 100% no-repeat, url(/images/palm-tree-right.png) 100% 100% no-repeat, linear-gradient(0deg, $yellow 0%, $orange 35%, $red 65%, $purple 90%);
     background-size: 200px 200px, 200px 200px, 200% 200%;
     animation: gradient 20s ease forwards;
   }
+
+  .hero.is-info.url-shortener {
+    $white:  rgba(241,106,67,1) ;
+    $info:  rgba(241,106,67,1) ;
+    background: rgb(47,145,149);
+    background: url(/images/palm-tree-left.png) 0% 100% no-repeat, url(/images/palm-tree-right.png) 100% 100% no-repeat, linear-gradient(0deg, $yellow 0%, $orange 35%, $red 65%, $purple 90%);
+    background-size: 200px 200px, 200px 200px, 200% 200%;
+    background-position: 0% 100%, 100% 100%, 100% 100%;
+  }
+
   
   @keyframes gradient {
     0% {
@@ -79,8 +88,13 @@ html,body {
     display: flex;
   }
   .navbar-item {
+    $white:  rgba(241,106,67,1) ;
+    $info:  rgba(241,106,67,1) ;
     display: flex;
     align-items: center;
+  }
+  .navbar-dropdown {
+    background-color: transparent ;
   }
   @media screen and (max-width: 1023px){
     .hero.is-info .navbar-menu {
@@ -95,13 +109,54 @@ html,body {
 }
 
 
-.button {
+.button.main {
+  $white:  rgba(241,106,67,1) ;
+  $info:  rgba(241,106,67,1) ;
   transition: 0.5s;
-  background-size: 200% auto;
+  background-size: 200% 100%;
   background-image: linear-gradient(to right, $orange 0%, $red 50%, $purple 100%);
- }
- .button:hover {
+}
+ .button.main:hover {
   background-position: right center; /* change the direction of the change here */
 }
 
+//Tooltip for copy to clipboard func in url shortener
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
 @import "../node_modules/bulma/bulma.sass";

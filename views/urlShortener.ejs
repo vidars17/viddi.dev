@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<%- include("partials/_head.ejs", { title: lingua.title}) %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<body>
+    <section class="hero is-info url-shortener is-fullheight">
+        <div class="hero-head">
+            <%- include("partials/_nav.ejs", { lang_link: lingua.title }) %>
+        </div>
+        
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <% if(typeof shortenedUrl !== 'undefined') {%>
+                <div class="tooltip control">
+                    <button id="copyToClipboard" value="<%= shortenedUrl %>" onclick="handleClick()" class="button is-info is-outlined is-inverted "><span class="tooltiptext" id="myTooltip">Copy to clipboard</span><%= shortenedUrl %></button>
+                </div>
+                <% } %>
+                <form action="/urlShortener" method="POST">
+                    <label for="url" class="label is-info has-text-white">Url shortener</label>
+                    <div class="field has-addons">
+                        
+                        <div class="control has-icons-left is-expanded">
+                            <input required class="input" id="url" name="url" type="text" placeholder="Insert url to shorten here" >
+                        </div>
+
+                    </div>
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <button type="submit" class="button main is-info">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        
+
+    </section>
+<script>
+    function handleClick() {
+        
+        var value = document.getElementById("copyToClipboard").value;
+        var blob = new Blob([value], {type: 'text/plain'});
+        var item = new ClipboardItem({'text/plain':blob});
+        navigator.clipboard.write([item]);
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "Copied!";
+
+    }
+
+    function outFunc() {
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "Copy to clipboard";
+    }
+</script>
+</body>
+</html>
+
