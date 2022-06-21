@@ -25,8 +25,14 @@ function createHashKey(url) {
     return shortHash(url);
 }
 
+async function hashExists(hash) {
+    return db.Urls.exists({key:hash});
+
+}
+
 module.exports = {
     getUrl,
     createShortenedUrl,
-    createHashKey
+    createHashKey,
+    hashExists
 }
