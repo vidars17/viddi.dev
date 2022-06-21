@@ -26,7 +26,9 @@ function createHashKey(url) {
 }
 
 async function hashExists(hash) {
-    return db.Urls.exists({key:hash});
+
+    return await db.Urls.exists({key:hash});
+
 
 }
 

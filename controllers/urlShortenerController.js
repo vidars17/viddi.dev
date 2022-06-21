@@ -15,19 +15,21 @@ module.exports = (app) => {
         
     });
 
-    app.post("/urlShortener/", (req, res) => {
+    app.post("/urlShortener/", async (req, res) => {
         var originalUrl = req.body.url;
         var shortenedUrl = urlService.createHashKey(originalUrl);
-        
-        if(urlService.hashExists(shortenedUrl)){
-            return res.render("./urlShortener.ejs", {shortenedUrl: `viddi.dev/s/${shortenedUrl}`})
+        var result = await urlService.hashExists(shortenedUrl);
+        if(result === null){
+            urlService.createShortenedUrl(originalUrl, shortenedUrl, () => {
+                return res.render("./urlShortener.ejs", {shortenedUrl: `viddi.dev/s/${shortenedUrl}`})
+            }, (error) => {
+                console.log(error);
+                res.status(400);
+            });
+            
         } else {
-                urlService.createShortenedUrl(originalUrl, shortenedUrl, () => {
-                    return res.render("./urlShortener.ejs", {shortenedUrl: `viddi.dev/s/${shortenedUrl}`})
-                }, (error) => {
-                    console.log(error);
-                    res.status(400);
-                });
+            return res.render("./urlShortener.ejs", {shortenedUrl: `viddi.dev/s/${shortenedUrl}`})
+            
         }
     
     });
