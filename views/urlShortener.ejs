@@ -12,26 +12,42 @@
         
         <div class="hero-body">
             <div class="container has-text-centered">
-                <div class="column is-6 is-offset-one-quarter"></div>
-                <label class="label is-info has-text-white">Url shortener</label>
+                <% if(typeof shortenedUrl !== 'undefined') {%>
+                <div class="control">
+                    <button id="copyToClipboard" value="<%= shortenedUrl %>" onclick="handleClick()" class="button is-info is-outlined is-inverted "><%= shortenedUrl %></button>
+                </div>
+                <% } %>
+                <form action="/urlShortener" method="POST">
+                    <label for="url" class="label is-info has-text-white">Url shortener</label>
                     <div class="field has-addons">
+                        
                         <div class="control has-icons-left is-expanded">
-                            <input class="input" type="text" placeholder="Insert url to shorten here">
+                            <input required class="input" id="url" name="url" type="text" placeholder="Insert url to shorten here" >
                         </div>
-                        <div class="control">
-                            <button class="button is-info is-outlined is-inverted ">Copy</button>
-                        </div>
+
                     </div>
                     <div class="field is-grouped">
                         <div class="control">
-                            <button class="button main is-info">Submit</button>
+                            <button type="submit" class="button main is-info">Submit</button>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
         
+        
 
     </section>
+<script>
+    function handleClick() {
+        
+        var value = document.getElementById("copyToClipboard").value;
+        var blob = new Blob([value], {type: 'text/plain'});
+        var item = new ClipboardItem({'text/plain':blob});
+        navigator.clipboard.write([item]);
+
+    }
+</script>
 </body>
 </html>
+

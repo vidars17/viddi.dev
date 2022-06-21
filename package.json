@@ -8,10 +8,11 @@
     "lingua": "^0.4.0",
     "mongoose": "^6.3.2",
     "save-dev": "^0.0.1-security",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "short-hash": "^1.0.0"
   },
   "devDependencies": {
-    "bulma": "^0.9.1",
+    "bulma": "0.9.4",
     "node-sass": ">=7.0.0",
     "nodemon": "^2.0.6"
   },
