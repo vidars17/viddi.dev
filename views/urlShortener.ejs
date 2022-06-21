@@ -13,8 +13,8 @@
         <div class="hero-body">
             <div class="container has-text-centered">
                 <% if(typeof shortenedUrl !== 'undefined') {%>
-                <div class="control">
-                    <button id="copyToClipboard" value="<%= shortenedUrl %>" onclick="handleClick()" class="button is-info is-outlined is-inverted "><%= shortenedUrl %></button>
+                <div class="tooltip control">
+                    <button id="copyToClipboard" value="<%= shortenedUrl %>" onclick="handleClick()" class="button is-info is-outlined is-inverted "><span class="tooltiptext" id="myTooltip">Copy to clipboard</span><%= shortenedUrl %></button>
                 </div>
                 <% } %>
                 <form action="/urlShortener" method="POST">
@@ -45,7 +45,14 @@
         var blob = new Blob([value], {type: 'text/plain'});
         var item = new ClipboardItem({'text/plain':blob});
         navigator.clipboard.write([item]);
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "Copied!";
 
+    }
+
+    function outFunc() {
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "Copy to clipboard";
     }
 </script>
 </body>
