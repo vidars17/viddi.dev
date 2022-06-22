@@ -41,18 +41,21 @@
 <script>
     function handleClick() {
         
-        var value = document.getElementById("copyToClipboard").value;
-        var blob = new Blob([value], {type: 'text/plain'});
-        var item = new ClipboardItem({'text/plain':blob});
-        navigator.clipboard.write([item]);
-        var tooltip = document.getElementById("myTooltip");
-        tooltip.innerHTML = "Copied!";
+        var value = $("#copyToClipboard").val();
+        if (navigator.userAgent.indexOf("Chrome") != -1) {
+            var blob = new Blob([value], {type: 'text/plain'});
+            var item = new ClipboardItem({'text/plain':blob});
+            navigator.clipboard.write([item]);
+        } else if (navigator.userAgent.indexOf("Firefox") != -1) {
+            document.execCommand("copy", value);
+        }
+
+        $("#myTooltip").text("Copied!");
 
     }
 
     function outFunc() {
-        var tooltip = document.getElementById("myTooltip");
-        tooltip.innerHTML = "Copy to clipboard";
+        $("#myTooltip").text("Copy to clipboard");
     }
 </script>
 </body>
