@@ -21,14 +21,14 @@ module.exports = (app) => {
         var result = await urlService.hashExists(shortenedUrl);
         if(result === null){
             urlService.createShortenedUrl(originalUrl, shortenedUrl, () => {
-                return res.render("./urlShortener.ejs", {shortenedUrl: `viddi.dev/s/${shortenedUrl}`})
+                return res.render("./urlShortener.ejs", {shortenedUrl: `https://viddi.dev/s/${shortenedUrl}`})
             }, (error) => {
                 console.log(error);
                 res.status(400);
             });
             
         } else {
-            return res.render("./urlShortener.ejs", {shortenedUrl: `viddi.dev/s/${shortenedUrl}`})
+            return res.render("./urlShortener.ejs", {shortenedUrl: `https://viddi.dev/s/${shortenedUrl}`})
             
         }
     
