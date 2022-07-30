@@ -17,6 +17,12 @@
                     <button id="copyToClipboard" value="<%= shortenedUrl %>" onclick="handleClick()" class="button is-info is-outlined is-inverted "><span class="tooltiptext" id="myTooltip">Copy to clipboard</span><%= shortenedUrl %></button>
                 </div>
                 <% } %>
+                <% if(typeof invalidUrl !== 'undefined') {%>
+                    <div class="notification is-danger is-light">
+                        <button class="delete"></button>
+                        The url that was just submitted was <strong>invalid</strong>, please insert a valid url.
+                      </div>
+                <% } %>
                 <form action="/urlShortener" method="POST">
                     <label for="url" class="label is-info has-text-white">Url shortener</label>
                     <div class="field has-addons">
@@ -38,6 +44,7 @@
         
 
     </section>
+    
 <script>
     function handleClick() {
         
@@ -57,6 +64,16 @@
     function outFunc() {
         $("#myTooltip").text("Copy to clipboard");
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+            const $notification = $delete.parentNode;
+
+            $delete.addEventListener('click', () => {
+                $notification.parentNode.removeChild($notification);
+            });
+        });
+    });
 </script>
 </body>
 </html>

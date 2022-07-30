@@ -1,5 +1,6 @@
 const db = require("../data/db");
 const shortHash = require('short-hash');
+const URL = require("url").URL;
 
 function getUrl(key, cb, errorCb) {
     db.Urls.find({key:key}, (error, response)=>{
@@ -26,15 +27,22 @@ function createHashKey(url) {
 }
 
 async function hashExists(hash) {
-
     return await db.Urls.exists({key:hash});
+}
 
-
+function isValidUrl(url) {
+    try {
+        new URL(url);
+        return true;
+    } catch (err) {
+        return false;
+    }
 }
 
 module.exports = {
     getUrl,
     createShortenedUrl,
     createHashKey,
-    hashExists
+    hashExists,
+    isValidUrl
 }
